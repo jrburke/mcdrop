@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>Setup</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen">
+    <script data-main="js/setup" src="js/require.js"></script>
+</head>
+
+<body>
+
+	<div id="wrapper" class="cf">
+		<div id="header" class="cf">
+			<h1 id="title"><a href="#">Untitled Blog</a> : Setup</h1> <!-- link to blog -->
+		</div>
+
+		<div id="setup">
+			<form id="setupForm" method="post" action="/api/saveConfig">
+
+				<ul class="mainList">
+					<li>
+						<label for="localDir">Local directory</label>
+						<input name="localDir" class="sans" type="text" placeholder="~/blog">
+					</li>
+					<li>
+						<label for="remoteServer">Remote server</label>
+						<input name="remoteServer" class="sans" type="text" placeholder="">
+
+					</li>
+					<li>
+						<label for="remoteDir">Remote directory</label>
+						<input name="remoteDir" class="sans" type="text" placeholder="">
+
+					</li>
+					<li>
+						<label for="name">Remote user name</label>
+						<input name="name" class="sans" type="text" placeholder="admin">
+					</li>
+					<li>
+						<label for="password">Remote password</label>
+						<input name="password" class="sans" type="password" placeholder="●●●●●●●●">
+
+					</li>
+
+				</ul>
+				<input type="submit" value="Save">
+
+			</form>
+		</div>
+
+	</div>
+
+</body>
+</html>
