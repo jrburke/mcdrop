@@ -2,35 +2,81 @@
 <html>
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <title>Sign In : Untitled Blog</title>
+    <title>Dashboard : Untitled Blog</title>
     <link rel="stylesheet" href="style.css" type="text/css" media="screen">
-    <script src="js/jquery-1.6.4.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="js/functions.js" type="text/javascript" charset="utf-8"></script>
+    <script data-main="js/index" src="js/require.js"></script>
 </head>
 
 <body>
 
 	<div id="wrapper" class="cf">
 		<div id="header" class="cf">
-			<h1 id="title"><a href="#">Untitled Blog</a> : Sign In</h1> <!-- link to blog -->
+			<h1 id="title"><a href="#">Untitled Blog</a> : Dashboard</h1> <!-- link to blog -->
+			<ul id="nav" class="view_posts">
+				<div class="highlight"></div>
+				<li class="sign_out"><a href="/demos/blog/admin">Sign Out</a></li>
+				<li class="posts">Posts</li>
+				<li class="profile">Profile</li>
+			</ul>
 		</div>
 
-		<div id="sign_in">
+		<div id="posts">
+			<div id="upload" class="cf">
+				<button class="sans">Upload New Post</button>
+			</div>
+
+			<ul id="post_list" class="cf">
+
+				<li class="post draft cf">
+					<div class="status">
+						<span class="publish"><button>publish</button></span>
+					</div>
+					<div class="filename mono"><a href="#">my_second_post_is_a_draft.md</a></div>
+					<ul class="actions">
+						<li class="delete"><input type="checkbox"></li>
+						<li class="replace"><a href="#">replace</a></li>
+						<li class="view"><a href="#">preview</a></li>
+					</ul>
+				</li>
+
+				<li class="post published cf">
+					<div class="date">Sep 28, 2011</div>
+					<div class="filename mono"><a href="#">getting_started.md</a></div>
+					<ul class="actions">
+						<li class="delete"><input type="checkbox"></li>
+						<li class="replace"><a href="#">replace</a></li>
+						<li class="view"><a href="#">view</a></li>
+					</ul>
+				</li>
+
+			</ul>
+		</div>
+
+		<div id="profile">
 			<form id="inputs">
-
-				<ul class="sign_in_form">
+				<ul class="name">
 					<li>
-						<label for="username">Username</label>
-						<input id="username" class="sans" type="text" placeholder="admin">
-					</li>
-					<li>
-						<label for="password">Password</label>
-						<input id="password" class="sans" type="text" placeholder="●●●●●●●●">
-
+						<label for="blog_title">Blog Title</label>
+						<input id="blog_title" class="sans" type="text" placeholder="Untitled Blog">
 					</li>
 				</ul>
-				<!-- temporarily using anchor tag to link to dashboard -->
-				<a class="temp" href="dashboard.html"><input type="submit" value="Sign In"></a>
+
+				<ul class="password">
+					<li>
+						<label for="username">Username</label>
+						<input id="username" class="sans" type="text" placeholder="Admin">
+					</li>
+					<li>
+						<label for="new_password">New Password</label>
+						<input id="new_password" class="sans" type="text" placeholder="●●●●●●●●">
+					</li>
+					<li>
+						<label for="confirm">Confirm Password</label>
+						<input id="confirm" class="sans" type="text" placeholder="●●●●●●●●">
+					</li>
+				</ul>
+
+				<input type="submit" value="Save Changes">
 
 			</form>
 		</div>

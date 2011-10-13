@@ -1,0 +1,6 @@
+* Turns out cannot pass password via the streams on child process, one suggestion
+  was to use unix "expect":
+  http://comments.gmane.org/gmane.comp.lang.javascript.nodejs/17578
+
+  A code example using expect:
+  https://github.com/FlashFan/NodeSSH/tree/master/lib

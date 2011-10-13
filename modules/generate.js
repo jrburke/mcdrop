@@ -19,7 +19,7 @@ define(function (require) {
         var dataFile, data, templateFile, template, webFile;
 
         //Copy all the miscellaneous files to to web directory.
-        file.copyDir(path.join(dir, 'templates'), path.join(dir, 'web'), /$[^_]/, true);
+        file.copyDir(path.join(dir, 'templates'), path.join(dir, 'web'), /\/[^_][^\/]+$/, true);
 
         //Generate the index.html file
         dataFile = path.join(dir, 'content', 'index.json');
