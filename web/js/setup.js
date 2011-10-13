@@ -29,20 +29,22 @@ define(function (require) {
         }
     });
 
+    function clearErrors() {
+        $('.errorField').removeClass('errorField');
+        $('.errorMessage').hide();
+    }
+
     $('body')
         // Handle form submits.
         .delegate('#setupForm', 'submit', function (evt) {
             var node = evt.target,
-                //inputs = $('input', node),
                 data = $(node).serialize();
-
-            //inputs.each(function (i, node) {
-            //    data += (data ? '&' : '') +
-            //            encodeURIComponent(node.name) + '=' + encodeURIComponent(node.value);
-            //});
 
             evt.stopPropagation();
             evt.preventDefault();
+
+            //Clear old errors
+            clearErrors();
 
             $.ajax({
                 url: node.action,
@@ -51,7 +53,10 @@ define(function (require) {
                 dataType: 'json',
                 success: function (data) {
                     if (data && data.status === 'ok') {
-                        //location = '/';
+                        location = '/';
+                    } else if (data && data.status === 'error') {
+                        $('[name="' + data.field + '"]').addClass('errorField');
+                        $('.' + data.field + '-' + data.code).show();
                     }
                 },
                 error: function (jqXHR, textStatus, errorThrown) {

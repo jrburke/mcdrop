@@ -5,10 +5,12 @@
  */
 
 /*jslint strict: false */
-/*global require: false, module: false */
+/*global define: false */
 
-function getConfig(data, load, config, request, response) {
-    load(config.getSafeData());
-}
+define(function (require) {
+    function getConfig(data, load, config, request, response) {
+        load(config.getSafeData());
+    }
 
-module.exports = getConfig;
+    return getConfig;
+});

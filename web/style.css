@@ -41,6 +41,15 @@ form input[type="text"]:-moz-placeholder {
    color: gray;
 }
 
+input[type="text"].errorField {
+    border: 1px solid red;
+}
+
+.errorMessage {
+    display: none;
+    color: red;
+}
+
 .sans {
 	font-family: 'Lucida Grande', Arial, sans-serif;
 }

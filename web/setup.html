@@ -15,12 +15,13 @@
 		</div>
 
 		<div id="setup">
-			<form id="setupForm" method="post" action="/api/saveConfig">
+			<form id="setupForm" method="post" action="/api/setup">
 
 				<ul class="mainList">
 					<li>
 						<label for="localDir">Local directory</label>
 						<input name="localDir" class="sans" type="text" placeholder="~/blog">
+                                                <div class="errorMessage localDir-nonexistentParent">Parent directory does not exist.</div>
 					</li>
 					<li>
 						<label for="remoteServer">Remote server</label>
